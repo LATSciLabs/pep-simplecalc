@@ -20,13 +20,12 @@ def mergeFile(file, setmit, temp, filecounter):
         
             # Split line.
             line = re.split('\s+', line)
-            
-            # Check if our line is already in the master list by checking if the sequence is already in it.                   
-            
+
+            # Check if our line is already in the master list by checking if the sequence is already in it.                               
             seq_found = 0
             
             for item in setmit:
-                if item[2] == line[2]:
+                if item[1] == line[2]:
                     item[filecounter + 2] = int(line[1])
                     seq_found = 1
 
