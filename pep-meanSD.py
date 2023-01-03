@@ -26,18 +26,18 @@ def mergeFile(file, setmit, temp, filecounter):
             seq_found = 0
             
             for item in setmit:
-                if item[1] == line[1]:
-                    item[filecounter + 2] = int(line[2])
+                if item[2] == line[2]:
+                    item[filecounter + 2] = int(line[1])
                     seq_found = 1
 
             # If not, add the line to the master list.
             if seq_found == 0:
                 temp[0] = line[0]
-                temp[1] = line[1].strip()
+                temp[1] = line[2].strip()
                 temp[2] = 0
                 temp[3] = 0
                 temp[4] = 0
-                temp[filecounter + 2] = int(line[2])
+                temp[filecounter + 2] = int(line[1])
                 
                 setmit.append(temp.copy())
             # print(temp)
